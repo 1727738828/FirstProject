@@ -1,0 +1,291 @@
+/**index.wxss**/
+/* 盒子整体 */
+.box {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+/* 搜索框 */
+.search {
+  height: 86rpx;
+}
+
+.search_con {
+  height: 50rpx;
+  margin: 18rpx 16rpx;
+  border-radius: 50rpx;
+  background: #f3f5f5;
+}
+
+.search_con image {
+  width: 26rpx;
+  height: 26rpx;
+  margin: 12rpx 14rpx;
+}
+
+.search_con text {
+  font-size: 26rpx;
+  line-height: 50rpx;
+  color: #cccccc;
+}
+
+/* 轮播图 */
+.carousel {
+  height: 414rpx;
+}
+
+.carousel_list {
+  width: 100%;
+  height: 414rpx;
+}
+
+.carousel_item {
+  width: 100%;
+  height: 100%;
+  padding: 0 12rpx;
+}
+
+/* 排行榜 */
+.rank {
+  padding: 36rpx 53rpx;
+  height: 124rpx;
+  justify-content: space-between;
+}
+
+.rank_item {
+  width: 90rpx;
+  height: 124rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.rank_item image {
+  width: 70rpx;
+  margin: 0 10rpx 16rpx;
+  height: 80rpx;
+}
+
+.rank_item text {
+  font-size: 26rpx;
+  color: #333333;
+  text-align: center;
+}
+
+/* 佳作推荐 */
+.recommend {
+  height: 1128rpx;
+}
+
+/* 标题 */
+.comic_title {
+  height: 102rpx;
+}
+
+.comic_title text {
+  width: 100%;
+  display: inline-block;
+  margin-top: 10rpx;
+  font-size: 32rpx;
+  line-height: 92rpx;
+  text-align: center;
+}
+
+/* 推荐列表 */
+.recommend_list {
+  height: 920rpx;
+}
+
+.recommend_item {
+  width: 100%;
+  height: 460rpx;
+  justify-content: space-between;
+}
+
+.recommend_con {
+  width: 50%;
+}
+
+.recommend_con image {
+  width: 100%;
+  height: 360rpx;
+}
+
+.recommend_item .recommend_con:last-child {
+  margin-left: 1%;
+}
+
+.recommend_detail {
+  height: 68rpx;
+  margin: 18rpx 0 22rpx 18rpx;
+  font-size: 26rpx;
+}
+
+.recommend_detail text {
+  display: block;
+}
+
+.recommend_name {
+  font-size: 26rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+}
+
+.recommend_type {
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 24rpx;
+  color: #81858a;
+}
+
+/* 查看更多、刷新 */
+.comic_btn {
+  height: 106rpx;
+}
+
+.comic_btn_item {
+  width: 336rpx;
+  height: 76rpx;
+  margin: 0 18rpx 28rpx;
+  background: #f7f9fa;
+  justify-content: space-between;
+  font-size: 26rpx;
+  line-height: 76rpx;
+  text-align: center;
+  color: #81858a;
+  border-radius: 5rpx;
+}
+
+.comic_btn_detail {
+  width: 114rpx;
+  height: 76rpx;
+  margin: 0 auto;
+}
+
+.comic_btn_detail image {
+  width: 22rpx;
+  height: 22rpx;
+  margin: 27rpx 0;
+  margin-right: 10rpx;
+}
+
+/* 中间分隔推荐 */
+.list_item {
+  height: 236rpx;
+}
+
+.list_item image {
+  width: 100%;
+  height: 236rpx;
+}
+
+/* 近期新作 */
+
+/* 标题 */
+.new_work_title {
+  height: 116rpx;
+}
+
+.new_work_list {
+  height: 828rpx;
+}
+
+.new_work_item {
+  height: 414rpx;
+  justify-content: space-between;
+}
+
+.new_work_con {
+  width: 238rpx;
+  height: 414rpx; 
+}
+
+.new_work_con image {
+  width: 238rpx;
+  height: 314rpx;
+}
+
+.comic_detail {
+  height: 68rpx;
+  margin: 18rpx 0 22rpx 18rpx;
+  font-size: 26rpx;
+}
+
+.comic_detail text {
+  display: block;
+}
+
+.comic_name {
+  font-size: 26rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+}
+
+.comic_type {
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 24rpx;
+  color: #81858a;
+}
+
+/* 互动栏目 */
+.interactive {
+  height: 822rpx;
+}
+
+.interactive_list {
+  height: 652rpx;
+}
+
+.interactive_item {
+  width: 100%;
+  height: 326rpx;
+  justify-content: space-between;
+}
+
+.interactive_con image {
+  height: 224rpx!important;
+}
+
+.interactive_item .recommend_con:last-child {
+  margin-left: 1%;
+}
+
+/* 尾部 */
+.footer {
+  height: 85rpx;
+  margin-top: 28rpx;
+  background: #f7f9fa;
+}
+
+.footer_con {
+  width: 490rpx;
+  height: 85rpx;
+  margin: 0 auto;
+}
+
+.footer_word {
+  font-size: 22rpx;
+  line-height: 85rpx;
+  /* text-align: center; */
+  color: #81858a;
+  margin: 0 14rpx;
+}
+
+.footer_left,
+.footer_right {
+  width: 114rpx;
+  height: 1rpx;
+  background: #e5e5e5;
+  margin: 41rpx 0;
+}

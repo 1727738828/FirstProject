@@ -1,0 +1,766 @@
+<!--index.wxml-->
+<view class="box flex column">
+  <!-- 搜索框 -->
+  <view class="search">
+    <view class="search_con flex row">
+      <image src="../../images/search.png"></image>
+      <text>搜索作品名</text>
+    </view>
+  </view>
+  <!-- 轮播图 -->
+  <view class="carousel">
+    <swiper class="carousel_list" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px"
+      indicator-color="{{indicator_color}}" indicator-active-color="{{indicator_active_color}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <view class="carousel_item">
+            <image src="{{item}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 排行榜 -->
+  <view class="rank flex row">
+    <!-- 20+榜 -->
+    <view class="rank_item">
+      <image src="../../images/rank_01.png"></image>
+      <text>20+榜</text>
+    </view>
+    <!-- 男生榜 -->
+    <view class="rank_item">
+      <image src="../../images/rank_02.png"></image>
+      <text>男生榜</text>
+    </view>
+    <!-- 新作榜 -->
+    <view class="rank_item">
+      <image src="../../images/rank_03.png"></image>
+      <text>新作榜</text>
+    </view>
+    <!-- 完结榜 -->
+    <view class="rank_item">
+      <image src="../../images/rank_04.png"></image>
+      <text>完结榜</text>
+    </view>
+  </view>
+  <!-- 佳作推荐 -->
+  <view class="recommend flex column">
+    <!-- 标题 -->
+    <view class="comic_title">
+      <text>佳作推荐</text>
+    </view>
+    <!-- 推荐列表 -->
+    <view class="recommend_list">
+      <view class='recommend_item flex row'>
+        <view class="recommend_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='recommend_detail'>
+            <text class='recommend_name'>怦然心动</text>
+            <text class='recommend_type'>剧情 治愈 校园</text>
+          </view>
+        </view>
+        <view class="recommend_con flex column">
+          <image src="../../images/recommend_02.png"></image>
+          <view class='recommend_detail'>
+            <text class='recommend_name'>快把我哥带走</text>
+            <text class='recommend_type'>日常 爆笑</text>
+          </view>
+        </view>
+      </view>
+      <view class='recommend_item flex row'>
+        <view class="recommend_con  flex column">
+          <image src="../../images/recommend_03.png"></image>
+          <view class='recommend_detail'>
+            <text class='recommend_name'>甜美的咬痕</text>
+            <text class='recommend_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+        <view class="recommend_con  flex column">
+          <image src="../../images/recommend_04.png"></image>
+          <view class='recommend_detail'>
+            <text class='recommend_name'>朝花夕拾</text>
+            <text class='recommend_type'>恋爱 校园</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 查看更多、刷新 -->
+    <view class="comic_btn flex row">
+      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item">
+        <view class='comic_btn_detail flex row'>
+          <image src="../../images/refresh.png"></image>
+          <text>换一换</text>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <!-- 中间分隔推荐 -->
+  <view class="list_item">
+    <image src="../../images/interval_01.png"></image>
+  </view>
+  <!-- 近期新作 -->
+  <view class="new_work flex column">
+    <view class="comic_title">
+      <text>近期新作</text>
+    </view>
+    <view class="new_work_list">
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="comic_btn flex row">
+      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item">
+        <view class='comic_btn_detail flex row'>
+          <image src="../../images/refresh.png"></image>
+          <text>换一换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 中间分隔推荐 -->
+  <view class="list_item">
+    <image src="../../images/interval_02.png"></image>
+  </view>
+  <!-- 潜力佳作 -->
+  <view class="new_work flex column">
+    <view class="comic_title">
+      <text>潜力佳作</text>
+    </view>
+    <view class="new_work_list">
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="comic_btn flex row">
+      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item">
+        <view class='comic_btn_detail flex row'>
+          <image src="../../images/refresh.png"></image>
+          <text>换一换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 中间分隔推荐 -->
+  <view class="list_item">
+    <image src="../../images/interval_03.png"></image>
+  </view>
+  <!-- 热门必看 -->
+  <view class="new_work flex column">
+    <view class="comic_title">
+      <text>热门必看</text>
+    </view>
+    <view class="new_work_list">
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="comic_btn flex row">
+      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item">
+        <view class='comic_btn_detail flex row'>
+          <image src="../../images/refresh.png"></image>
+          <text>换一换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 中间分隔推荐 -->
+  <view class="list_item">
+    <image src="../../images/interval_04.png"></image>
+  </view>
+  <!-- 少女纯爱 -->
+  <view class="new_work flex column">
+    <view class="comic_title">
+      <text>少女纯爱</text>
+    </view>
+    <view class="new_work_list">
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="comic_btn flex row">
+      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item">
+        <view class='comic_btn_detail flex row'>
+          <image src="../../images/refresh.png"></image>
+          <text>换一换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 中间分隔推荐 -->
+  <view class="list_item">
+    <image src="../../images/interval_05.png"></image>
+  </view>
+  <!-- 都市奇幻 -->
+  <view class="new_work flex column">
+    <view class="comic_title">
+      <text>都市奇幻</text>
+    </view>
+    <view class="new_work_list">
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="comic_btn flex row">
+      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item">
+        <view class='comic_btn_detail flex row'>
+          <image src="../../images/refresh.png"></image>
+          <text>换一换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 中间分隔推荐 -->
+  <view class="list_item">
+    <image src="../../images/interval_06.png"></image>
+  </view>
+  <!-- 绝美古风 -->
+  <view class="new_work flex column">
+    <view class="comic_title">
+      <text>绝美古风</text>
+    </view>
+    <view class="new_work_list">
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="comic_btn flex row">
+      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item">
+        <view class='comic_btn_detail flex row'>
+          <image src="../../images/refresh.png"></image>
+          <text>换一换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 中间分隔推荐 -->
+  <view class="list_item">
+    <image src="../../images/interval_07.png"></image>
+  </view>
+  <!-- 爆笑日常 -->
+  <view class="new_work flex column">
+    <view class="comic_title">
+      <text>爆笑日常</text>
+    </view>
+    <view class="new_work_list">
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="comic_btn flex row">
+      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item">
+        <view class='comic_btn_detail flex row'>
+          <image src="../../images/refresh.png"></image>
+          <text>换一换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 中间分隔推荐 -->
+  <view class="list_item">
+    <image src="../../images/interval_08_01.png"></image>
+  </view>
+  <view class="list_item">
+    <image src="../../images/interval_08_02.png"></image>
+  </view>
+  <!-- 日漫专区 -->
+  <view class="new_work flex column">
+    <view class="comic_title">
+      <text>日漫专区</text>
+    </view>
+    <view class="new_work_list">
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="comic_btn flex row">
+      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item">
+        <view class='comic_btn_detail flex row'>
+          <image src="../../images/refresh.png"></image>
+          <text>换一换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 中间分隔推荐 -->
+  <view class="list_item">
+    <image src="../../images/interval_09.png"></image>
+  </view>
+  <!-- 完结佳作 -->
+  <view class="new_work flex column">
+    <view class="comic_title">
+      <text>完结佳作</text>
+    </view>
+    <view class="new_work_list">
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+      <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>梦闻山海经</text>
+            <text class='comic_type'>恋爱 奇幻 校园</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="comic_btn flex row">
+      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item">
+        <view class='comic_btn_detail flex row'>
+          <image src="../../images/refresh.png"></image>
+          <text>换一换</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 互动栏目 -->
+  <view class="interactive flex column">
+    <!-- 标题 -->
+    <view class="comic_title">
+      <text>互动栏目</text>
+    </view>
+    <!-- 互动列表 -->
+    <view class="interactive_list">
+      <view class='interactive_item flex row'>
+        <view class="recommend_con interactive_con flex column">
+          <image src="../../images/recommend_01.png"></image>
+          <view class='recommend_detail'>
+            <text class='recommend_name'>怦然心动</text>
+            <text class='recommend_type'>剧情 治愈 校园</text>
+          </view>
+        </view>
+        <view class="recommend_con flex column">
+          <image src="../../images/recommend_02.png"></image>
+          <view class='recommend_detail'>
+            <text class='recommend_name'>快把我哥带走</text>
+            <text class='recommend_type'>日常 爆笑</text>
+          </view>
+        </view>
+      </view>
+      <view class='interactive_item flex row'>
+        <view class="recommend_con  flex column">
+          <image src="../../images/recommend_03.png"></image>
+          <view class='recommend_detail'>
+            <text class='recommend_name'>甜美的咬痕</text>
+            <text class='recommend_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+        <view class="recommend_con  flex column">
+          <image src="../../images/recommend_04.png"></image>
+          <view class='recommend_detail'>
+            <text class='recommend_name'>朝花夕拾</text>
+            <text class='recommend_type'>恋爱 校园</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 查看更多、刷新 -->
+    <view class="comic_btn flex row">
+      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item">
+        <view class='comic_btn_detail flex row'>
+          <image src="../../images/refresh.png"></image>
+          <text>换一换</text>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <!-- 尾部 -->
+  <view class="footer">
+    <view class="footer_con flex row">
+      <view class="footer_left"></view>
+      <view class="footer_word">到底啦~不要再拉啦^_^</view>
+      <view class="footer_right"></view>
+    </view>
+  </view>
+</view>
