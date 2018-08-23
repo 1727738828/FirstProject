@@ -1,8 +1,10 @@
 {
   "pages":[
-    "pages/detail/detail",
-    "pages/my/my",
     "pages/type/type",
+    "pages/detail/detail",
+    "pages/rank/rank",
+    
+    "pages/my/my",
     "pages/index/index"
     
   ],

@@ -24,16 +24,19 @@
   width: 100%;
   height: 130rpx;
   position: fixed;
+  z-index: 99;
+  background: #fff;
+  border-bottom: 2rpx solid #e6e6e6;
 }
 
 .type_nav_item {
   height: 65rpx;
   justify-content: space-between;
-  margin: 0 25rpx 0 15rpx;
+  margin: 0 40rpx 0 35rpx;
 }
 
 .type_nav_info text {
-  width: 96rpx;
+  /* width: 96rpx; */
   display: block;
   height: 65rpx;
   line-height: 65rpx;
@@ -42,38 +45,65 @@
   text-align: center;
 }
 
-.hidden {
+.type_nav_info .on {
+  color: #f5a623;
+  border-bottom: 2rpx solid #f5a623;
+}
+
+/* .hidden {
   height: 4rpx;
   width: 40rpx;
   margin: -6rpx auto 0;
   background:#f5a623; 
   border-radius: 10rpx;
   display: none;
-}
-
-.first_one text{
-  color: #f5a623;
-}
-
-.first_one .hidden {
-  display: block;
-}
+} */
 
 /* 推荐、最热、最新  */
+
 .choose {
-  height: 72rpx;
-  border-top: 2rpx solid #e6e6e6;
+  /* height: 72rpx; */
   justify-content: space-between;
   padding: 0 25rpx 0 15rpx;
 }
 
-.choose_type text:first-child {
-  color: #f5a829;
+.choose_type .show,
+.choose_state .stateshow {
+  color: #f5a623;
+}
+
+/* .choose_first {
+  display: none;
+} */
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
 
 .choose_type text,
-.choose_btn text {
+.choose_state text {
   width: 96rpx;
+}
+
+.choose_second {
+  justify-content: space-between;
+}
+
+.choose_btn text {
+  width: 60rpx;
+}
+
+.choose_type text,
+.choose_state text,
+.choose_btn text {
   height: 26rpx;
   display: block;
   font-size: 26rpx;
@@ -83,7 +113,14 @@
   color: #555555;
 }
 
-.choose_type text:nth-of-type(2) {
+.choose_btn image {
+  width: 26rpx;
+  height: 26rpx;
+  margin: 24rpx 0 24rpx 0;
+}
+
+.choose_type text:nth-of-type(2),
+.choose_state text:nth-of-type(2) {
   border-left: 2rpx solid #e6e6e6;
   border-right: 2rpx solid #e6e6e6;
 }
@@ -98,13 +135,14 @@
   border: 0;
 }
 
-.comic_item image {
+.comic_item .comic_icon {
   width: 310rpx;
   height: 192rpx;
   background: lightpink;
 }
 
 .comic_detail {
+  width: 300rpx;
   margin-left: 30rpx;
 }
 
@@ -129,8 +167,7 @@
 
 .comic_info {
   height: 26rpx;
-  margin: 18rpx 0 24rpx;
-  
+  margin: 16rpx 0 4rpx; 
 }
 
 .text {
@@ -139,8 +176,27 @@
   line-height: 26rpx;
 }
 
+.text image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 8rpx;
+}
+
+.text text {
+  display: inline-block;
+  margin-bottom: 4rpx;
+}
+
 .text_comment {
   margin-left: 30rpx;
+}
+
+.scroll_state {
+  display: none;
+}
+
+.scrollshow {
+  display: block;
 }
 
 /* 尾部 */
@@ -170,4 +226,8 @@
   height: 1rpx;
   background: #e5e5e5;
   margin: 41rpx 0;
+}
+
+.active {
+  display: none;
 }

@@ -1,0 +1,120 @@
+<!--pages/rank/rank.wxml-->
+<view class="box flex column">
+  <view class="swiper_con flex column">
+    <view class="swiper-tab flex column">
+      <view class="swiper_tab_item flex row">
+        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">男生榜</view>
+        <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">女生榜</view>
+        <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">20+最爱榜</view>
+        <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">新作榜</view>
+
+      </view>
+      <view class="swiper_tab_item flex row ">
+        <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">完结榜</view>
+        <view class="swiper-tab-list {{currentTab==5 ? 'on' : ''}}" data-current="5" bindtap="swichNav">畅销榜</view>
+        <view class="swiper-tab-list"></view>
+        <view class="swiper-tab-list"></view>
+      </view>
+
+
+    </view>
+
+    <view class="rank_con">
+      <swiper current="{{currentTab}}" class="swiper-box" duration="300"  bindchange="bindChange" style="height:{{winHeight - 31}}px">
+        <!-- 男生榜 -->
+        <swiper-item>
+          <view class="boy_rank flex column">
+            <view class="update_time">下次出榜时间: 7月16日17:00</view>
+            <view class="comic_list">
+              <view class="comic_item flex row">
+                <image class="comic_icon"></image>
+                <view class="comic_detail flex column">
+                  <text class="comic_name">魔道祖师</text>
+                  <text>作者: 墨香铜臭（原著）+落地生根</text>
+                  <view class="comic_label flex row">
+                    <text>奇幻</text>
+                    <text>古风</text>
+                    <text>畅销</text>
+                  </view>
+                  <text>更新至: 第39话 引诱</text>
+                </view>
+                <!-- 排行 -->
+                <view class="comic_rank" >
+                  <image src="../../images/first.png"></image>
+                </view>
+                
+              </view>
+              <view class="comic_item flex row">
+                <image class="comic_icon"></image>
+                <view class="comic_detail flex column">
+                  <text class="comic_name">魔道祖师</text>
+                  <text>作者: 墨香铜臭（原著）+落地生根</text>
+                  <view class="comic_label flex row">
+                    <text>奇幻</text>
+                    <text>古风</text>
+                    <text>畅销</text>
+                  </view>
+                  <text>更新至: 第39话 引诱</text>
+                </view>
+                <!-- 排行 -->
+                <view class="comic_rank" >
+                  <image src="../../images/second.png"></image>
+                </view>
+              </view>
+              <view class="comic_item flex row">
+                <image class="comic_icon"></image>
+                <view class="comic_detail flex column">
+                  <text class="comic_name">魔道祖师</text>
+                  <text>作者: 墨香铜臭（原著）+落地生根</text>
+                  <view class="comic_label flex row">
+                    <text>奇幻</text>
+                    <text>古风</text>
+                    <text>畅销</text>
+                  </view>
+                  <text>更新至: 第39话 引诱</text>
+                </view>
+                <!-- 排行 -->
+                <view class="comic_rank" >
+                  <image src="../../images/third.png"></image>
+                </view>
+              </view>
+              <view class="comic_item flex row">
+                <image class="comic_icon"></image>
+                <view class="comic_detail flex column">
+                  <text class="comic_name">魔道祖师</text>
+                  <text>作者: 墨香铜臭（原著）+落地生根</text>
+                  <view class="comic_label flex row">
+                    <text>奇幻</text>
+                    <text>古风</text>
+                    <text>畅销</text>
+                  </view>
+                  <text>更新至: 第39话 引诱</text>
+                </view>
+                <!-- 排行 -->
+                <view class="comic_rank" >
+                  <text>04</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+        <!-- 女生榜 -->
+        <swiper-item>
+        </swiper-item>
+        <!-- 20+最爱榜 -->
+        <swiper-item>
+        </swiper-item>
+        <!-- 新作榜 -->
+        <swiper-item>
+        </swiper-item>
+        <!-- 完结榜 -->
+        <swiper-item>
+        </swiper-item>
+        <!-- 畅销榜 -->
+        <swiper-item>
+        </swiper-item>
+      </swiper>
+    </view>
+
+  </view>
+</view>

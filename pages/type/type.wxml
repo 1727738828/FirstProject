@@ -4,61 +4,389 @@
   <view class="type_con">
     <view class="type_nav flex column">
       <view class="type_nav_item flex row">
-        <view class="type_nav_info flex column first_one"><text>全部</text><view class="hidden"></view></view>
-        <view class="type_nav_info flex column"><text>恋爱</text><view class="hidden"></view></view>
-        <view class="type_nav_info flex column"><text>古风</text><view class="hidden"></view></view>
-        <view class="type_nav_info flex column"><text>爆笑</text><view class="hidden"></view></view>
-        <view class="type_nav_info flex column"><text>奇幻</text><view class="hidden"></view></view>
-        <view class="type_nav_info flex column"><text>校园</text><view class="hidden"></view></view>
-        <view class="type_nav_info flex column"><text>都市</text><view class="hidden"></view></view>
+        <view class="type_nav_info flex column first_one">
+          <text bindtap="chooseshow" data-current="0" class="{{currentTab==0 ? 'on' : ''}}">全部</text>
+          <view class="hidden"></view>
+        </view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="1" class="{{currentTab==1 ? 'on' : ''}}">恋爱</text>
+          <view class="hidden"></view>
+        </view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="2" class="{{currentTab==2 ? 'on' : ''}}">古风</text>
+          <view class="hidden"></view>
+        </view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="3" class="{{currentTab==3 ? 'on' : ''}}">爆笑</text>
+          <view class="hidden"></view>
+        </view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="4" class="{{currentTab==4 ? 'on' : ''}}">奇幻</text>
+          <view class="hidden"></view>
+        </view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="5" class="{{currentTab==5 ? 'on' : ''}}">校园</text>
+          <view class="hidden"></view>
+        </view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="6" class="{{currentTab==6 ? 'on' : ''}}">都市</text>
+          <view class="hidden"></view>
+        </view>
       </view>
       <view class="type_nav_item flex row">
-        <view class="type_nav_info flex column"><text>彩虹</text><view class="hidden"></view></view>
-        <view class="type_nav_info flex column"><text>少年</text><view class="hidden"></view></view>
-        <view class="type_nav_info flex column"><text>总裁</text><view class="hidden"></view></view>
-        <view class="type_nav_info flex column"><text>灵异</text><view class="hidden"></view></view>
-        <view class="type_nav_info flex column"><text>正能量</text><view class="hidden"></view></view>
-        <view class="type_nav_info flex column"><text>畅销</text><view class="hidden"></view></view>
-        <view class="type_nav_info flex column"><text>完结</text><view class="hidden"></view></view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="7" class="{{currentTab==7 ? 'on' : ''}}">彩虹</text>
+          <view class="hidden"></view>
+        </view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="8" class="{{currentTab==8 ? 'on' : ''}}">少年</text>
+          <view class="hidden"></view>
+        </view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="9" class="{{currentTab==9 ? 'on' : ''}}">总裁</text>
+          <view class="hidden"></view>
+        </view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="10" class="{{currentTab==10 ? 'on' : ''}}">灵异</text>
+          <view class="hidden"></view>
+        </view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="11" class="{{currentTab==11 ? 'on' : ''}}">正能量</text>
+          <view class="hidden"></view>
+        </view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="12" class="{{currentTab==12 ? 'on' : ''}}">畅销</text>
+          <view class="hidden"></view>
+        </view>
+        <view class="type_nav_info flex column">
+          <text bindtap="chooseshow" data-current="13" class="{{currentTab==13 ? 'on' : ''}}">完结</text>
+          <view class="hidden"></view>
+        </view>
       </view>
     </view>
   </view>
 
   <!-- 推荐、最热、最新 -->
-  <view class="choose flex row">
-    <view class="choose_type flex row">
-      <text>推荐</text>
-      <text>最热</text>
-      <text>最新</text>
+  <view class="choose flex column">
+    <view class="choose_first hide{{showView?'show':''}}">
+      <view class="choose_state flex row">
+        <text bindtap="chooseState" data-state="0" class="{{currentstate==0 ? 'stateshow' : ''}}">全部</text>
+        <text bindtap="chooseState" data-state="1" class="{{currentstate==1 ? 'stateshow' : ''}}">连载</text>
+        <text bindtap="chooseState" data-state="2" class="{{currentstate==2 ? 'stateshow' : ''}}">完结</text>
+      </view>
     </view>
-    <view class="choose_btn">
-      <text>筛选</text>
+    <view class="choose_second flex row">
+      <view class="choose_type flex row">
+        <text bindtap="choose" data-selected="0" class="{{currentval==0 ? 'show' : ''}}">推荐</text>
+        <text bindtap="choose" data-selected="1" class="{{currentval==1 ? 'show' : ''}}">最热</text>
+        <text bindtap="choose" data-selected="2" class="{{currentval==2 ? 'show' : ''}}">最新</text>
+      </view>
+      <view class="choose_btn flex row "  bindtap="onChangeShowState">
+        <image src="../../images/dropdown.png" class="{{showView==true ? 'rotate' : ''}}"></image>
+        <text>筛选</text>
+      </view>
     </view>
+
+
   </view>
   <!-- 图片列表 -->
   <view class="comic_list flex column">
-    <view class="comic_item flex row">
-      <image></image>
-      <view class="comic_detail flex column">
-        <text class="comic_title">甜美的咬痕</text>
-        <text class="comic_author">瑞思+伊凯</text>
-        <view class="comic_info flex row">
-          <view class="text">1.72亿</view>
-          <view class="text text_comment">548万</view>
+    <!-- 全部 -->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==0 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
         </view>
       </view>
-    </view>
-    <view class="comic_item flex row">
-      <image></image>
-      <view class="comic_detail flex column">
-        <text class="comic_title">甜美的咬痕</text>
-        <text class="comic_author">瑞思+伊凯</text>
-        <view class="comic_info flex row">
-          <view class="text">1.72亿</view>
-          <view class="text text_comment">548万</view>
+
+    </scroll-view>
+
+    <!-- 恋爱 -->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==1 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕1</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
         </view>
       </view>
-    </view>
+    </scroll-view>
+
+
+
+    <!-- 古风-->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==2 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 爆笑 -->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==3 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 奇幻 -->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==4 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 校园 -->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==5 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 都市 -->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==6 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 彩虹-->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==7 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 少年 -->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==8 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 总裁 -->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==9 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 灵异 -->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==10 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 正能量-->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==11 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 畅销 -->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==12 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 完结 -->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state {{currentTab==13 ? 'scrollshow' : ''}}">
+      <view class="comic_item flex row">
+        <image class="comic_icon"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">甜美的咬痕</text>
+          <text class="comic_author">瑞思+伊凯</text>
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>1.72亿</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>548万</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
   </view>
   <!-- 尾部 -->
   <view class="footer">

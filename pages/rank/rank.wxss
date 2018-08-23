@@ -1,0 +1,187 @@
+/* pages/rank/rank.wxss */
+.box {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+/* tab选项布局 */
+
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  height: 200rpx;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+
+.swiper_tab_item {
+  height: 60rpx;
+  justify-content: space-between;
+  margin: 20rpx 30rpx 10rpx;
+}
+
+/* 菜单内容布局 */
+
+.swiper-tab-list {
+  font-size: 26rpx;
+  display: inline-block;
+  width: 130rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #555555;
+}
+
+
+/* 点击菜单呈现的样式 */
+
+.on {
+  color: #f5a623;
+  border-bottom: 6rpx solid #f5a623;
+}
+
+/* 点击菜单后出现的内容布局 */
+.swiper_con {
+  height: 100%;
+}
+
+.rank_con {
+  height: 100%;
+}
+
+.swiper-box {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/* 作品简介 */
+.comic_infors {
+  padding: 24rpx;
+  height: 382rpx;
+}
+
+.comic_infors text {
+  display: block;
+  text-align: left;
+}
+
+.comic_infor_title {
+  height: 62rpx;
+  font-size: 32rpx;
+  line-height: 62rpx;
+}
+
+.comic_infor_detail {
+  /* height: 141rpx; */
+  font-size: 26rpx;
+  line-height: 47rpx;
+}
+
+.comic_infor_author {
+  height: 78rpx;
+  line-height: 78rpx;
+  font-size: 30rpx;
+}
+
+.comic_information {
+  height: 94rpx;
+  justify-content: space-between;
+}
+
+.comic_information image {
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.comic_information text {
+  display: block;
+  font-size: 22rpx;
+  line-height: 26rpx;
+}
+
+.comic_infor_item {
+  width: 190rpx;
+  height: 26rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 36rpx 0 30rpx 0;
+}
+
+/* 下次更新时间 */
+.update_time {
+  height: 84rpx;
+  font-size: 26rpx;
+  line-height: 84rpx;
+  color: #81858a;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+
+.comic_item {
+  height: 320rpx;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+
+.comic_icon {
+  width: 33%;
+  height: 100%;
+  background: lightblue;
+}
+
+.comic_detail {
+  width: 47%;
+  margin-left: 20rpx;
+}
+
+.comic_detail text {
+  display: block;
+  font-size: 24rpx;
+  color: #81858a;
+  text-align: left;
+}
+
+.comic_detail .comic_name {
+  font-size: 32rpx;
+  margin: 40rpx 0 10rpx;
+  color: #181818;
+}
+
+.comic_label text {
+  border-radius: 5rpx;
+  border: 2rpx solid #cccccc;
+  padding: 2rpx 8rpx;
+  margin: 10rpx 10rpx 10rpx 0;
+}
+
+.comic_rank {
+  width: 20%;
+}
+
+.comic_rank image {
+  width: 90rpx;
+  height: 90rpx;
+  margin-top: 20rpx;
+}
+
+.comic_rank text {
+  display: block;
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 56rpx;
+  color: #dfdfdf;
+  margin: 20rpx 0 0 20rpx;
+}

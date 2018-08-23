@@ -1,4 +1,4 @@
-// pages/detail/detail.js
+// pages/rank/rank.js
 Page({
 
   /**
@@ -9,35 +9,32 @@ Page({
     winWidth: 0,
     winHeight: 0,
     // tab切换
-    currentTab: 0,
-    author: [
-      '唐家三少',
-      '天蚕土豆',
-      '辰东',
-      '风凌天下'
-    ],
-    interval: 2000,
-    duration: 500,
+    currentTab: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(e) {
     var that = this;
     wx.setNavigationBarTitle({
-      title: "怦然心动"
+      title: "排行榜"
     })
+    that.setData({
+      winHeight: 320 * 20
+    });
   },
 
   // 滑动切换tab
-  bindChange: function (e) {
+  bindChange: function(e) {
     var that = this;
-    that.setData({ currentTab: e.detail.current });
+    that.setData({
+      currentTab: e.detail.current
+    });
   },
 
   // 点击tab切换
-  swichNav: function (e) {
+  swichNav: function(e) {
     var that = this;
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
@@ -51,49 +48,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
   }
 })

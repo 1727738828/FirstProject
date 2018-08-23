@@ -1,2 +1,78 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class="box flex column">
+  <!-- 背景、标签 -->
+  <view class="comic_infor">
+    <image class="comic_bg" src="../../images/lunbotu_03.png"></image>
+    <view class="attention">
+      + 关注
+    </view>
+    <view class="label_heat flex row">
+      <view class="label flex row">
+        <text class="label_item">剧情</text>
+        <text class="label_item">治愈</text>
+        <text class="label_item">校园</text>
+      </view>
+      <view class="heat">
+        总热度 199.02亿
+      </view>
+    </view>
+  </view>
+  <!-- 作品简介 -->
+  <view class="comic_con">
+    <view class="swiper_con">
+      <view class="swiper-tab">
+        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">详情</view>
+        <view class="swiper-tab-list2 {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">选集</view>
+      </view>
+
+      <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+        <swiper-item>
+          <view class="comic_infors flex column">
+            <view class="comic_infor_title">
+              <text>作品简介</text>
+            </view>
+            <view class="comic_infor_detail">
+              <text>少男少女同住一个屋檐下，一同经历青春的懵懂和烦恼。画风温馨的超人气少女漫画，感受青春悸动的萌芽，这一部就够！【独家/暑假期间 每周二&周六更新，责编： 00】</text>
+            </view>
+            <view class="comic_infor_author">
+              <!-- <text>作者</text> -->
+              <swiper class="comic_infor_author carousel_item" interval="{{interval}}" duration="{{duration}}">
+                <swiper-item>
+                  <view class="carousel_item">
+                    <text>作者：{{author}}</text>
+                  </view>
+                </swiper-item>
+              </swiper>
+            </view>
+            <view class="comic_information flex row">
+              <view class="comic_infor_popular comic_infor_item">
+                <image src="../../images/hot.png"></image>
+                <text>人气值881.76亿</text>
+              </view>
+              <view class="comic_infor_comment comic_infor_item">
+                <image src="../../images/comment.png"></image>
+                <text>总评论545万</text>
+              </view>
+              <view class="comic_infor_attention comic_infor_item">
+                <image src="../../images/attent.png"></image>
+                <text>1517万人关注</text>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <image src='../../images/attention.png' class='attention1'></image>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+
+  <!-- 底部 -->
+  <view class="footer flex row">
+    <view class="comic_episode">
+      <text>第1话 命运纠缠的起点</text>
+
+    </view>
+    <view class="start_read">开始阅读</view>
+  </view>
+</view>
