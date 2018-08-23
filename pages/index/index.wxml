@@ -11,10 +11,10 @@
   <view class="carousel">
     <swiper class="carousel_list" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px"
       indicator-color="{{indicator_color}}" indicator-active-color="{{indicator_active_color}}">
-      <block wx:for="{{background}}" wx:key="*this">
+      <block wx:for="{{lunbotu}}" wx:key="*this" wx:for-item="subject" wx:for-index="id" wx:if="{{id<6}}">
         <swiper-item>
           <view class="carousel_item">
-            <image src="{{item}}"></image>
+            <image src="{{subject.large}}"></image>
           </view>
         </swiper-item>
       </block>
@@ -51,38 +51,16 @@
     </view>
     <!-- 推荐列表 -->
     <view class="recommend_list">
-      <view class='recommend_item flex row'>
-        <view class="recommend_con flex column">
-          <image src="" style="background:lightpink;"></image>
+      <view class='recommend_item'>
+        <view class="recommend_con flex column" wx:for="{{recommend}}" wx:key="recommend" wx:for-item="recommend_item">
+          <image src="{{recommend_item.details}}"></image>
           <view class='recommend_detail'>
-            <text class='recommend_name'>怦然心动</text>
-            <text class='recommend_type'>剧情 治愈 校园</text>
-          </view>
-        </view>
-        <view class="recommend_con flex column">
-          <image src=""  style="background:lightpink;"></image>
-          <view class='recommend_detail'>
-            <text class='recommend_name'>快把我哥带走</text>
-            <text class='recommend_type'>日常 爆笑</text>
+            <text class='recommend_name'>{{recommend_item.name}}</text>
+            <text class='recommend_type'>{{recommend_item.sort1}}</text>
           </view>
         </view>
       </view>
-      <view class='recommend_item flex row'>
-        <view class="recommend_con  flex column">
-          <image src=""  style="background:lightpink;"></image>
-          <view class='recommend_detail'>
-            <text class='recommend_name'>甜美的咬痕</text>
-            <text class='recommend_type'>恋爱 奇幻</text>
-          </view>
-        </view>
-        <view class="recommend_con  flex column">
-          <image src=""  style="background:lightpink;"></image>
-          <view class='recommend_detail'>
-            <text class='recommend_name'>朝花夕拾</text>
-            <text class='recommend_type'>恋爱 校园</text>
-          </view>
-        </view>
-      </view>
+
     </view>
     <!-- 查看更多、刷新 -->
     <view class="comic_btn flex row">
@@ -92,13 +70,12 @@
           <image src="../../images/refresh.png"></image>
           <text>换一换</text>
         </view>
-
       </view>
     </view>
   </view>
   <!-- 中间分隔推荐 -->
   <view class="list_item">
-    <image src=""  style="background:lightpink;"></image>
+    <image src="" style="background:lightpink;"></image>
   </view>
   <!-- 近期新作 -->
   <view class="new_work flex column">
@@ -108,6 +85,29 @@
     <view class="new_work_list">
       <view class='new_work_item flex row'>
         <view class="new_work_con flex column">
+          <image src="" style="background:lightpink;"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'></text> 
+            <text class='comic_type'></text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="" style="background:lightpink;"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>奉旨出征</text>
+            <text class='comic_type'>恋爱 爆笑 古风</text>
+          </view>
+        </view>
+        <view class="new_work_con flex column">
+          <image src="" style="background:lightpink;"></image>
+          <view class='comic_detail'>
+            <text class='comic_name'>银河来电</text>
+            <text class='comic_type'>恋爱 奇幻</text>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='new_work_item flex row'>
+        <view class="new_work_con flex column">
           <image src=""  style="background:lightpink;"></image>
           <view class='comic_detail'>
             <text class='comic_name'>梦闻山海经</text>
@@ -128,30 +128,7 @@
             <text class='comic_type'>恋爱 奇幻</text>
           </view>
         </view>
-      </view>
-      <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src=""  style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src=""  style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src=""  style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
-          </view>
-        </view>
-      </view>
+      </view> -->
     </view>
     <view class="comic_btn flex row">
       <view class="comic_btn_item">查看更多</view>
@@ -242,7 +219,7 @@
     <view class="new_work_list">
       <view class='new_work_item flex row'>
         <view class="new_work_con flex column">
-          <image src=""  style="background:lightpink;"></image>
+          <image src="" style="background:lightpink;"></image>
           <view class='comic_detail'>
             <text class='comic_name'>梦闻山海经</text>
             <text class='comic_type'>恋爱 奇幻 校园</text>

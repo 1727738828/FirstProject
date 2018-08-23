@@ -18,7 +18,3 @@ module.exports = {
   ask: askNet
 }
 
-
-module.exports = {
-  formatTime: formatTime
-}

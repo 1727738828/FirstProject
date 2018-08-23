@@ -108,12 +108,16 @@
 
 .recommend_item {
   width: 100%;
-  height: 460rpx;
-  justify-content: space-between;
+  height: 920rpx;
 }
 
 .recommend_con {
-  width: 50%;
+  width: 49%;
+  float: left;
+}
+
+.recommend_con:nth-child(even) {
+  float: right;
 }
 
 .recommend_con image {
