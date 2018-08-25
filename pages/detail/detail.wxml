@@ -2,18 +2,18 @@
 <view class="box flex column">
   <!-- 背景、标签 -->
   <view class="comic_infor">
-    <image class="comic_bg" src="../../images/lunbotu_03.png"></image>
+    <image class="comic_bg" src="{{recommend_detail.details}}"></image>
     <view class="attention">
       + 关注
     </view>
     <view class="label_heat flex row">
       <view class="label flex row">
-        <text class="label_item">剧情</text>
-        <text class="label_item">治愈</text>
-        <text class="label_item">校园</text>
+        <text class="label_item {{recommend_detail.sort1==null ? 'sorthidden' : ''}}">{{recommend_detail.sort1}}</text>
+        <text class="label_item {{recommend_detail.sort2==null ? 'sorthidden' : ''}}">{{recommend_detail.sort2}}</text>
+        <text class="label_item {{recommend_detail.sort3==null ? 'sorthidden' : ''}}">{{recommend_detail.sort3}}</text>
       </view>
       <view class="heat">
-        总热度 199.02亿
+        总热度 {{recommend_detail.hot}}
       </view>
     </view>
   </view>
@@ -38,8 +38,11 @@
               <!-- <text>作者</text> -->
               <swiper class="comic_infor_author carousel_item" interval="{{interval}}" duration="{{duration}}">
                 <swiper-item>
-                  <view class="carousel_item">
-                    <text>作者：{{author}}</text>
+                  <view class="carousel_item flex row">
+                    <text>作者：</text>
+                    <text class="{{recommend_detail.author==null ? 'sorthidden' : ''}}">{{recommend_detail.author}}</text>
+                    <text class="{{recommend_detail.author2==null ? 'sorthidden' : ''}}">{{recommend_detail.author2}}</text>
+                    <text class="{{recommend_detail.author3==null ? 'sorthidden' : ''}}">{{recommend_detail.author3}}</text>
                   </view>
                 </swiper-item>
               </swiper>
@@ -47,15 +50,15 @@
             <view class="comic_information flex row">
               <view class="comic_infor_popular comic_infor_item">
                 <image src="../../images/hot.png"></image>
-                <text>人气值881.76亿</text>
+                <text>人气值{{recommend_detail.popular}}</text>
               </view>
               <view class="comic_infor_comment comic_infor_item">
                 <image src="../../images/comment.png"></image>
-                <text>总评论545万</text>
+                <text>总评论{{recommend_detail.comment}}</text>
               </view>
               <view class="comic_infor_attention comic_infor_item">
                 <image src="../../images/attent.png"></image>
-                <text>1517万人关注</text>
+                <text>{{recommend_detail.attention}}人关注</text>
               </view>
             </view>
           </view>

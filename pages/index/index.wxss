@@ -56,6 +56,11 @@
   padding: 0 12rpx;
 }
 
+.carousel_item image {
+  width: 100%;
+  height: 110%;
+}
+
 /* 排行榜 */
 .rank {
   padding: 36rpx 53rpx;
@@ -152,6 +157,14 @@
   color: #81858a;
 }
 
+.recommend_type text {
+  margin-right: 10rpx;
+}
+
+.sorthidden {
+  display: none!important;
+}
+
 /* 查看更多、刷新 */
 .comic_btn {
   height: 106rpx;
@@ -240,6 +253,10 @@
   line-height: 42rpx;
   font-size: 24rpx;
   color: #81858a;
+}
+
+.comic_type text {
+  margin-right: 10rpx;
 }
 
 /* 互动栏目 */

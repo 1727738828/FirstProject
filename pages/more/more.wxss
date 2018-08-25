@@ -1,0 +1,155 @@
+/* pages/more/more.wxss */
+
+.box {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+/* 图片列表 */
+
+.comic_item {
+  height: 192rpx;
+  border-bottom: 2rpx solid #e6e6e6;
+  background: #f7f9fa;
+  position: relative;
+}
+
+.comic_item:last-child {
+  border: 0;
+}
+
+.comic_item .comic_icon {
+  width: 310rpx;
+  height: 192rpx;
+  background: lightpink;
+}
+
+.comic_detail {
+  width: 276rpx;
+  margin-left: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.comic_author, .text {
+  display: block;
+  color: #999;
+}
+
+.comic_title {
+  display: block;
+  font-size: 30rpx;
+  margin: 26rpx 0;
+  color: #181818;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.comic_author {
+  margin: 6rpx 0;
+  font-size: 24rpx;
+}
+
+.comic_author text {
+  margin-right: 10rpx;
+  border: 2rpx solid #ccc;
+  padding: 5rpx 8rpx;
+}
+
+.attention {
+  height: 30rpx;
+  line-height: 30rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  background: #fde23d;
+  font-size: 24rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  padding: 12rpx 20rpx;
+}
+
+.comic_info {
+  height: 26rpx;
+  margin: 16rpx 0 4rpx;
+}
+
+.text {
+  font-size: 24rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+}
+
+.text image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 8rpx;
+  margin-top: 8rpx;
+}
+
+.text text {
+  display: inline-block;
+  margin-bottom: 4rpx;
+}
+
+.text_comment {
+  margin-left: 30rpx;
+}
+
+.sorthidden {
+  display: none !important;
+}
+
+.comic_list {
+  display: none;
+}
+
+.showView {
+  display: block !important;
+}
+
+/* 尾部 */
+
+.footer {
+  height: 85rpx;
+  margin-top: 28rpx;
+  background: #f7f9fa;
+}
+
+.footer_con {
+  width: 490rpx;
+  height: 85rpx;
+  margin: 0 auto;
+}
+
+.footer_word {
+  font-size: 22rpx;
+  line-height: 85rpx;
+  /* text-align: center; */
+  color: #81858a;
+  margin: 0 14rpx;
+}
+
+.footer_left, .footer_right {
+  width: 114rpx;
+  height: 1rpx;
+  background: #e5e5e5;
+  margin: 41rpx 0;
+}
+
+.active {
+  display: none;
+}

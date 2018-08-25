@@ -1,0 +1,100 @@
+<!--pages/more/more.wxml-->
+<view class="box flex column">
+  <!-- 图片列表 -->
+  <view class="comic_list flex column {{comic_id==1 ? 'showView' : ''}}">
+    <!-- 全部 -->
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state" >
+      <view class="comic_item flex row" wx:for="{{recommend}}" wx:key="recommend" wx:for-item="recommend_item" wx:for-index="recommend_item_id">
+        <image class="comic_icon" src="{{recommend_item.details}}"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">{{recommend_item.name}}</text>
+          <view class="comic_author">
+            <text class="{{recommend_item.sort1==null ? 'sorthidden' : ''}}">{{recommend_item.sort1}}</text>
+            <text class="{{recommend_item.sort2==null ? 'sorthidden' : ''}}">{{recommend_item.sort2}}</text>
+            <text class="{{recommend_item.sort3==null ? 'sorthidden' : ''}}">{{recommend_item.sort3}}</text>
+          </view>
+
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>{{recommend_item.likes}}</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>{{recommend_item.comment}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="attention">+ 关注</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 近期新作 -->
+  <view class="comic_list flex column {{comic_id==2 ? 'showView' : ''}}">
+    
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state">
+      <view class="comic_item flex row" wx:for="{{new_work}}" wx:key="new_work" wx:for-item="new_work_item" wx:for-index="new_work_item_id">
+        <image class="comic_icon" src="{{new_work_item.details}}"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">{{new_work_item.name}}</text>
+          <view class="comic_author">
+            <text class="{{new_work_item.sort1==null ? 'sorthidden' : ''}}">{{new_work_item.sort1}}</text>
+            <text class="{{new_work_item.sort2==null ? 'sorthidden' : ''}}">{{new_work_item.sort2}}</text>
+            <text class="{{new_work_item.sort3==null ? 'sorthidden' : ''}}">{{new_work_item.sort3}}</text>
+          </view>
+
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>{{new_work_item.likes}}</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>{{new_work_item.comment}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="attention">+ 关注</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 潜力佳作 -->
+  <view class="comic_list flex column  {{comic_id==3 ? 'showView' : ''}}">
+     
+    <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll_state ">
+      <view class="comic_item flex row" wx:for="{{potential_work}}" wx:key="potential_work" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id">
+        <image class="comic_icon" src="{{potential_work_item.details}}"></image>
+        <view class="comic_detail flex column">
+          <text class="comic_title">{{potential_work_item.name}}</text>
+          <view class="comic_author">
+            <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+            <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+            <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+          </view>
+
+          <view class="comic_info flex row">
+            <view class="text flex row">
+              <image src="../../images/like.png"></image>
+              <text>{{potential_work_item.comment}}</text>
+            </view>
+            <view class="text text_comment flex row">
+              <image src="../../images/type_comment.png"></image>
+              <text>{{potential_work_item.comment}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="attention">+ 关注</view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 尾部 -->
+  <view class="footer">
+    <view class="footer_con flex row">
+      <view class="footer_left"></view>
+      <view class="footer_word">到底啦~不要再拉啦^_^</view>
+      <view class="footer_right"></view>
+    </view>
+  </view>
+</view>

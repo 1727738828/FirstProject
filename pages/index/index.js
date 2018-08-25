@@ -8,6 +8,9 @@ Page({
   data: {
     lunbotu:'',
     recommend:'',
+    intervals:'',
+    new_work: '',
+    potential_work: '',
     indicatorDots: true,
     vertical: false,
     autoplay: true,
@@ -20,18 +23,39 @@ Page({
     indicator_active_color: "#fde23d"
   },
   //事件处理函数
-  bindViewTap: function() {
+  ShowDetail: function(e) {
+    var data = e.currentTarget.dataset;
+    var recommend_id = e.currentTarget.dataset.recommend_id;
+    var recommend = e.currentTarget.dataset.recommend;
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../detail/detail?recommend_id=' + recommend_id + "&&recommend=" + recommend
     })
   },
+
+  ShowMore:function(e){
+    var data = e.currentTarget.dataset;
+    var comic_id = e.currentTarget.dataset.comic_id;
+    wx.navigateTo({
+      url: '../more/more?comic_id='+comic_id
+    })
+  },
+
   onLoad: function () {
     var that = this;
     util.ask('index', function (data) {
       console.log(data);
       that.setData({
         lunbotu:data[0],
-        recommend:data[1]
+        intervals:data[1]
+      });
+    });
+
+    util.ask('type', function (data) {
+      console.log(data);
+      that.setData({
+        recommend: data[0],
+        new_work: data[1],
+        potential_work: data[2]
       });
     });
   },

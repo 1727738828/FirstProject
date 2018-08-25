@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/more/more",
+    
     "pages/type/type",
     "pages/detail/detail",
     "pages/rank/rank",  

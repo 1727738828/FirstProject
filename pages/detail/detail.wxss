@@ -69,6 +69,10 @@
   border-radius: 30rpx;
 }
 
+.sorthidden {
+  display: none!important;
+}
+
 .heat {
   margin-top: 8rpx;
   width: 240rpx;
@@ -162,6 +166,15 @@
 
 .carousel_item {
   width: 1000rpx;
+}
+
+.carousel_item text {
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.carousel_item text:first-child {
+  margin-left: 0;
 }
 
 .comic_information {
