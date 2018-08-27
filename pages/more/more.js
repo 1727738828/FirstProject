@@ -15,6 +15,15 @@ Page({
     potential_work: ''
   },
 
+  ShowDetail: function (e) {
+    var data = e.currentTarget.dataset;
+    var recommend_id = e.currentTarget.dataset.recommend_id;
+    var recommend = e.currentTarget.dataset.recommend;
+    wx.navigateTo({
+      url: '../detail/detail?recommend_id=' + recommend_id + "&&recommend=" + recommend
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

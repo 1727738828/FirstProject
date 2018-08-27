@@ -7,7 +7,7 @@
       + 关注
     </view>
     <view class="label_heat flex row">
-      <view class="label flex row">
+      <view class="label">
         <text class="label_item {{recommend_detail.sort1==null ? 'sorthidden' : ''}}">{{recommend_detail.sort1}}</text>
         <text class="label_item {{recommend_detail.sort2==null ? 'sorthidden' : ''}}">{{recommend_detail.sort2}}</text>
         <text class="label_item {{recommend_detail.sort3==null ? 'sorthidden' : ''}}">{{recommend_detail.sort3}}</text>

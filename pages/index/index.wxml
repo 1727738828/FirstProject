@@ -88,7 +88,7 @@
     </view>
     <view class="new_work_list">
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column" wx:for="{{new_work}}" wx:key="new_work1" wx:for-item="new_work_item" wx:for-index="new_work_item_id" bindtap="ShowDetail" wx:if="{{new_work_item_id<3}}">
+        <view class="new_work_con flex column" wx:for="{{new_work}}" wx:key="new_work1" wx:for-item="new_work_item" wx:for-index="new_work_item_id" bindtap="ShowDetail" wx:if="{{new_work_item_id<3}}" data-recommend_id="{{new_work_item.id}}" data-recommend="new_work">
           <image src="{{new_work_item.recommend}}"></image>
           <view class='comic_detail'>
             <text class='comic_name'>{{new_work_item.name}}</text>
@@ -101,7 +101,7 @@
         </view>
       </view>
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column" wx:for="{{new_work}}" wx:key="new_work2" wx:for-item="new_work_item" wx:for-index="new_work_item_id" bindtap="ShowDetail" wx:if="{{new_work_item_id>=3&&new_work_item_id<6}}">
+        <view class="new_work_con flex column" wx:for="{{new_work}}" wx:key="new_work2" wx:for-item="new_work_item" wx:for-index="new_work_item_id" bindtap="ShowDetail" wx:if="{{new_work_item_id>=3&&new_work_item_id<6}}" data-recommend_id="{{new_work_item.id}}" data-recommend="new_work">
           <image src="{{new_work_item.recommend}}"></image>
           <view class='comic_detail'>
             <text class='comic_name'>{{new_work_item.name}}</text>
@@ -135,7 +135,7 @@
     </view>
     <view class="new_work_list">
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work1" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id<3}}">
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work1" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id<3}}" data-recommend_id="{{potential_work_item.id}}" data-recommend="potential_work">
           <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
             <text class='comic_name'>{{potential_work_item.name}}</text>
@@ -178,58 +178,38 @@
   <!-- 热门必看 -->
   <view class="new_work flex column">
     <view class="comic_title">
-      <text>热门必看</text>
+      <text>潜力佳作</text>
     </view>
     <view class="new_work_list">
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work1" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id<3}}" data-recommend_id="{{potential_work_item.id}}" data-recommend="potential_work">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work2" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id>=3&&potential_work_item_id<6}}">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
     </view>
     <view class="comic_btn flex row">
-      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item"  bindtap="ShowMore" data-comic_id= "3">查看更多</view>
       <view class="comic_btn_item">
         <view class='comic_btn_detail flex row'>
           <image src="../../images/refresh.png"></image>
@@ -245,58 +225,38 @@
   <!-- 少女纯爱 -->
   <view class="new_work flex column">
     <view class="comic_title">
-      <text>少女纯爱</text>
+      <text>潜力佳作</text>
     </view>
     <view class="new_work_list">
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work1" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id<3}}" data-recommend_id="{{potential_work_item.id}}" data-recommend="potential_work">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work2" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id>=3&&potential_work_item_id<6}}">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
     </view>
     <view class="comic_btn flex row">
-      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item"  bindtap="ShowMore" data-comic_id= "3">查看更多</view>
       <view class="comic_btn_item">
         <view class='comic_btn_detail flex row'>
           <image src="../../images/refresh.png"></image>
@@ -312,58 +272,38 @@
   <!-- 都市奇幻 -->
   <view class="new_work flex column">
     <view class="comic_title">
-      <text>都市奇幻</text>
+      <text>潜力佳作</text>
     </view>
     <view class="new_work_list">
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work1" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id<3}}" data-recommend_id="{{potential_work_item.id}}" data-recommend="potential_work">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work2" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id>=3&&potential_work_item_id<6}}">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
     </view>
     <view class="comic_btn flex row">
-      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item"  bindtap="ShowMore" data-comic_id= "3">查看更多</view>
       <view class="comic_btn_item">
         <view class='comic_btn_detail flex row'>
           <image src="../../images/refresh.png"></image>
@@ -379,58 +319,38 @@
   <!-- 绝美古风 -->
   <view class="new_work flex column">
     <view class="comic_title">
-      <text>绝美古风</text>
+      <text>潜力佳作</text>
     </view>
     <view class="new_work_list">
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work1" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id<3}}" data-recommend_id="{{potential_work_item.id}}" data-recommend="potential_work">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work2" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id>=3&&potential_work_item_id<6}}">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
     </view>
     <view class="comic_btn flex row">
-      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item"  bindtap="ShowMore" data-comic_id= "3">查看更多</view>
       <view class="comic_btn_item">
         <view class='comic_btn_detail flex row'>
           <image src="../../images/refresh.png"></image>
@@ -446,58 +366,38 @@
   <!-- 爆笑日常 -->
   <view class="new_work flex column">
     <view class="comic_title">
-      <text>爆笑日常</text>
+      <text>潜力佳作</text>
     </view>
     <view class="new_work_list">
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work1" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id<3}}" data-recommend_id="{{potential_work_item.id}}" data-recommend="potential_work">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work2" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id>=3&&potential_work_item_id<6}}">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
     </view>
     <view class="comic_btn flex row">
-      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item"  bindtap="ShowMore" data-comic_id= "3">查看更多</view>
       <view class="comic_btn_item">
         <view class='comic_btn_detail flex row'>
           <image src="../../images/refresh.png"></image>
@@ -513,58 +413,38 @@
   <!-- 日漫专区 -->
   <view class="new_work flex column">
     <view class="comic_title">
-      <text>日漫专区</text>
+      <text>潜力佳作</text>
     </view>
     <view class="new_work_list">
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work1" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id<3}}" data-recommend_id="{{potential_work_item.id}}" data-recommend="potential_work">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work2" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id>=3&&potential_work_item_id<6}}">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
     </view>
     <view class="comic_btn flex row">
-      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item"  bindtap="ShowMore" data-comic_id= "3">查看更多</view>
       <view class="comic_btn_item">
         <view class='comic_btn_detail flex row'>
           <image src="../../images/refresh.png"></image>
@@ -580,58 +460,38 @@
   <!-- 完结佳作 -->
   <view class="new_work flex column">
     <view class="comic_title">
-      <text>完结佳作</text>
+      <text>潜力佳作</text>
     </view>
     <view class="new_work_list">
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work1" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id<3}}" data-recommend_id="{{potential_work_item.id}}" data-recommend="potential_work">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
       <view class='new_work_item flex row'>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
+        <view class="new_work_con flex column" wx:for="{{potential_work}}" wx:key="potential_work2" wx:for-item="potential_work_item" wx:for-index="potential_work_item_id" bindtap="ShowDetail" wx:if="{{potential_work_item_id>=3&&potential_work_item_id<6}}">
+          <image src="{{potential_work_item.recommend}}"></image>
           <view class='comic_detail'>
-            <text class='comic_name'>梦闻山海经</text>
-            <text class='comic_type'>恋爱 奇幻 校园</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>奉旨出征</text>
-            <text class='comic_type'>恋爱 爆笑 古风</text>
-          </view>
-        </view>
-        <view class="new_work_con flex column">
-          <image src="" style="background:lightpink;"></image>
-          <view class='comic_detail'>
-            <text class='comic_name'>银河来电</text>
-            <text class='comic_type'>恋爱 奇幻</text>
+            <text class='comic_name'>{{potential_work_item.name}}</text>
+            <view class='comic_type flex row'>
+              <text class="{{potential_work_item.sort1==null ? 'sorthidden' : ''}}">{{potential_work_item.sort1}}</text>
+              <text class="{{potential_work_item.sort2==null ? 'sorthidden' : ''}}">{{potential_work_item.sort2}}</text>
+              <text class="{{potential_work_item.sort3==null ? 'sorthidden' : ''}}">{{potential_work_item.sort3}}</text>
+            </view>
           </view>
         </view>
       </view>
     </view>
     <view class="comic_btn flex row">
-      <view class="comic_btn_item">查看更多</view>
+      <view class="comic_btn_item"  bindtap="ShowMore" data-comic_id= "3">查看更多</view>
       <view class="comic_btn_item">
         <view class='comic_btn_detail flex row'>
           <image src="../../images/refresh.png"></image>
@@ -689,7 +549,6 @@
           <image src="../../images/refresh.png"></image>
           <text>换一换</text>
         </view>
-
       </view>
     </view>
   </view>

@@ -13,12 +13,6 @@ Page({
     winHeight: 0,
     // tab切换
     currentTab: 0,
-    author: [
-      '唐家三少',
-      '天蚕土豆',
-      '辰东',
-      '风凌天下'
-    ],
     interval: 2000,
     duration: 500,
     recommend_id: '',
@@ -44,6 +38,30 @@ Page({
               recommend_detail: data[0][i]
             });
             console.log(data[0][i]);
+          }
+        }
+      }
+
+      if (e.recommend == "new_work") {
+        var length = data[1].length;
+        for (var i = 0; i < length; i++) {
+          if (data[1][i].id == e.recommend_id) {
+            that.setData({
+              recommend_detail: data[1][i]
+            });
+            console.log(data[1][i]);
+          }
+        }
+      }
+
+      if (e.recommend == "potential_work") {
+        var length = data[1].length;
+        for (var i = 0; i < length; i++) {
+          if (data[2][i].id == e.recommend_id) {
+            that.setData({
+              recommend_detail: data[2][i]
+            });
+            console.log(data[2][i]);
           }
         }
       }

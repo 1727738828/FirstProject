@@ -56,14 +56,14 @@
 }
 
 .label {
-  width: 240rpx;
-  justify-content: space-between;
+  width: 280rpx;
 }
 
 .label text {
-  display: block;
+  display: inline-block;
   width: 70rpx;
   height: 40rpx;
+  margin-right: 10rpx;
   border: 2rpx solid #d4d4d4;
   text-align: center;
   border-radius: 30rpx;
@@ -197,17 +197,17 @@
 }
 
 .comic_information text {
-  display: block;
+  display: inline-block;
   font-size: 22rpx;
   line-height: 26rpx;
+  margin-left: 10rpx;
 }
 
 .comic_infor_item {
-  width: 190rpx;
+  width: 200rpx;
   height: 26rpx;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   padding: 36rpx 0 30rpx 0;
 }
 
